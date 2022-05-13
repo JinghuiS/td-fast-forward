@@ -1,7 +1,7 @@
 <template>
-    <Header class="tdesign-starter-header-layout">
+    <Header class="td-starter-header-layout">
         <HeadMenu
-            class="tdesign-starter-header-menu tdesign-starter-header-menu-fixed-side"
+            class="td-starter-header-menu td-starter-header-menu-fixed"
             value="item1"
         >
             <MenuItem value="item1"> 已选内容 </MenuItem>
@@ -31,8 +31,9 @@ import { Header, HeadMenu, MenuItem, Icon } from 'tdesign-vue-next'
 
 <style lang="less" scoped>
 @import '@/style/layout';
-.@{prefix}-header {
+.td-header {
     border-bottom: 1px solid var(--td-border-level-1-color);
+
     &-layout {
         height: 64px;
     }
