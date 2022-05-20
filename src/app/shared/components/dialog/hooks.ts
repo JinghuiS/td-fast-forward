@@ -1,8 +1,8 @@
 import Dialog from './DialogComponent.vue'
-import { useDependency, useOverlay, useOverlayRef, type OverlayType } from 'vdi'
 
 import { DialogService } from './Dialog.Service'
 import type { TdDialogProps } from 'tdesign-vue-next'
+import { useDependency, useOverlayRef, useOverlay, type OverlayType } from 'vdi'
 
 export type useDialogProps = OverlayType<TdDialogProps>
 
@@ -29,7 +29,6 @@ export const useDialog = (_dialogType: useDialogProps) => {
 export const useDialogRef = () => {
     const dialogRef = useOverlayRef()
     const dialogService = useDependency(DialogService)
-
     return {
         ...dialogRef,
         confirm: dialogService.confirm.bind(dialogService)

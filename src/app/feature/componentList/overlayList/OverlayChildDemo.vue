@@ -10,8 +10,6 @@ import { useDialogRef } from '@/app/shared/components/dialog'
 const { confirm, close } = useDialogRef()
 
 confirm(() => {
-    // console.log(close)
     close(111)
-    // close(111)
 })
 </script>
