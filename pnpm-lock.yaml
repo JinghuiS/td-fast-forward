@@ -18,7 +18,7 @@ specifiers:
   typescript: ~4.6.3
   unocss: ^0.33.2
   unplugin-vue-components: ^0.19.5
-  vdi: ^0.3.2
+  vdi: ^0.4.1
   vite: ^2.9.5
   vue: ^3.2.33
   vue-router: ^4.0.14
@@ -28,7 +28,7 @@ dependencies:
   '@wendellhu/redi': 0.5.0
   less: 4.1.2
   tdesign-vue-next: 0.14.1_vue@3.2.33
-  vdi: 0.3.2
+  vdi: 0.4.1
   vue: 3.2.33
   vue-router: 4.0.15_vue@3.2.33
 
@@ -2906,8 +2906,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
-  /vdi/0.3.2:
-    resolution: {integrity: sha512-bjM2BGLAnOdKo86OLAUBJuJwS09V33a8sx5PzjoYOBpVehyVVVQsqLhNkl652KVlHr7PpZMW3eoOhiMtpHrifw==}
+  /vdi/0.4.1:
+    resolution: {integrity: sha512-giT+ccY4vJMfLxXC+CmChvl8EdjSauxt1rbpraX5ZpUyoUwpo/oWV7JMB9IsP0Jys5nT3K0ttu5wLRtkpNJJrg==}
     dependencies:
       '@wendellhu/redi': 0.5.0
       vue: 3.2.33
