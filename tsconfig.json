@@ -3,6 +3,7 @@
   "include": ["env.d.ts","src/**/*.ts", "src/**/*", "src/**/*.tsx", "src/**/*.vue"],
   "compilerOptions": {
     "experimentalDecorators": true,
+    "importsNotUsedAsValues": "preserve",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],

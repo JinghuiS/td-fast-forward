@@ -1,9 +1,11 @@
 import Dialog from './DialogComponent.vue'
 
 import { DialogService } from './Dialog.Service'
-import type { TdDialogProps } from 'tdesign-vue-next'
-import { useDependency, useOverlayRef, useOverlay, type OverlayType } from 'vdi'
 
+import { useDependency, useOverlayRef, useOverlay } from 'vdi'
+
+import type { TdDialogProps } from 'tdesign-vue-next'
+import type { OverlayType } from 'vdi'
 export type useDialogProps = OverlayType<TdDialogProps>
 
 /** dialog的服务hook

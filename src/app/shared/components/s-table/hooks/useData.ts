@@ -1,9 +1,8 @@
-import {
-    MessagePlugin,
-    type PaginationProps,
-    type TableRowData
-} from 'tdesign-vue-next'
+import { MessagePlugin } from 'tdesign-vue-next'
+
 import { onMounted, ref } from 'vue'
+
+import type { PaginationProps, TableRowData } from 'tdesign-vue-next'
 import type { STableProps } from '../type'
 
 export const useTableData = (props: STableProps) => {

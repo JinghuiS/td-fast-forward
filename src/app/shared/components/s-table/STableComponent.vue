@@ -12,12 +12,12 @@
 </template>
 
 <script setup lang="ts">
-import {
-    EnhancedTable,
-    type TableRowData,
-    type TdBaseTableProps
-} from 'tdesign-vue-next'
+import { EnhancedTable } from 'tdesign-vue-next'
+
 import { useTableData } from './hooks/useData'
+
+//type
+import type { TableRowData, TdBaseTableProps } from 'tdesign-vue-next'
 import type { STablePageProps, STableRespondProps, STableColumns } from './type'
 const props = withDefaults(
     defineProps<{
