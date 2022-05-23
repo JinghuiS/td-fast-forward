@@ -1,7 +1,6 @@
 import { VdiRouterModule, vueModule, type VdiRouterRaw } from 'vdi'
 import { createWebHashHistory } from 'vue-router'
 import { LayoutModule } from './layout/Layout.Module'
-// import Layout from './layout/LayoutComponent.vue'
 
 const routes: VdiRouterRaw[] = [
     {
@@ -19,6 +18,10 @@ const routes: VdiRouterRaw[] = [
                     import('./feature/componentList/overlayList/DialogView.vue')
             }
         ]
+    },
+    {
+        path: '/login',
+        component: () => import('./layout/login/LoginView.vue')
     }
 ]
 
