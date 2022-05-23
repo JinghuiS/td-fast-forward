@@ -141,6 +141,7 @@ import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
 
 import { useTokenService } from '@/app/core/service/Token.Service'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 const INITIAL_DATA = {
     account: '',
     password: ''
@@ -149,6 +150,7 @@ const INITIAL_DATA = {
 const { setToken } = useTokenService()
 
 const formData = ref({ ...INITIAL_DATA })
+const { push } = useRouter()
 
 const rules = {
     account: [{ required: true, message: '账号必填', type: 'error' }],
@@ -179,6 +181,7 @@ const onSubmit = ({ validateResult, firstError }: any) => {
 const login = () => {
     //通过setToken可以在登录之后把从后端获取的token保存到本地
     setToken('token')
+    push('/')
 }
 </script>
 <style lang="less" scoped>
