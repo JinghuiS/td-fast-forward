@@ -1,6 +1,12 @@
-import { VdiRouterModule, vueModule, type VdiRouterRaw } from 'vdi'
+import { VdiRouterModule, vueModule,  } from 'vdi'
+
 import { createWebHashHistory } from 'vue-router'
 import { LayoutModule } from './layout/Layout.Module'
+
+
+//type
+import type {VdiRouterRaw} from 'vdi'
+
 
 const routes: VdiRouterRaw[] = [
     {
