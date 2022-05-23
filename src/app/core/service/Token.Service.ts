@@ -13,5 +13,8 @@ export class TokenService {
 //获取TokenService的服务
 export function useTokenService() {
     const tokenService = useDependency(TokenService)
-    return tokenService
+    return {
+        token: tokenService.token,
+        setToken: tokenService.setToken.bind(tokenService)
+    }
 }
