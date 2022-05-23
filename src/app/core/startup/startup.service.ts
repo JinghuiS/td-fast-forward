@@ -1,6 +1,7 @@
 import { LayoutService } from '@/app/layout/Layout.service'
 import { Inject } from '@wendellhu/redi'
-import { VDI_ROUTER, type APP_INITIALIZER_TYPE } from 'vdi'
+import { VDI_ROUTER } from 'vdi'
+import type { APP_INITIALIZER_TYPE } from 'vdi'
 import type { Router } from 'vue-router'
 import { TokenService } from '../service/Token.Service'
 

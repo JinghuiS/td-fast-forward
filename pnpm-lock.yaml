@@ -14,6 +14,7 @@ specifiers:
   eslint-plugin-vue: ^8.2.0
   less: ^4.1.2
   prettier: ^2.5.1
+  tdesign-icons-vue-next: ^0.1.1
   tdesign-vue-next: ^0.14.1
   typescript: ~4.6.3
   unocss: ^0.33.2
@@ -27,6 +28,7 @@ specifiers:
 dependencies:
   '@wendellhu/redi': 0.5.0
   less: 4.1.2
+  tdesign-icons-vue-next: 0.1.1_vue@3.2.33
   tdesign-vue-next: 0.14.1_vue@3.2.33
   vdi: 0.4.2
   vue: 3.2.33
@@ -2695,6 +2697,15 @@ packages:
 
   /tdesign-icons-vue-next/0.0.7_vue@3.2.33:
     resolution: {integrity: sha512-Jf7mT9P65I6DpaQwDEVmcddhifcfjspPjW7VPfpWCnEbJJAru8uyeKOkrdiWjqtpfL9Z3VecvJ/QitbJqteKMQ==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@babel/runtime': 7.17.9
+      vue: 3.2.33
+    dev: false
+
+  /tdesign-icons-vue-next/0.1.1_vue@3.2.33:
+    resolution: {integrity: sha512-uGa9XzTb6zKMjQglZscnn/nBSlxJaMCjgDqcdlkA0BBiSsPr5AQmejb7Kcei126jNNd5E36y+roB8f09utN2Vg==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
