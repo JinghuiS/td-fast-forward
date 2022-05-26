@@ -86,7 +86,8 @@
                 </h1>
                 <div class="flex justify-center items-center">
                     <div>
-                        <img src="@/assets/bg.png" class="img" />
+                        <BowLottie />
+                        <!-- <img src="@/assets/bg.png" class="img" /> -->
                     </div>
                     <div class="form-box">
                         <div class="text-xl font-semibold mb-4">欢迎回来👏🏻</div>
@@ -138,24 +139,21 @@
 <script lang="ts" setup>
 import { Button, MessagePlugin, Form, FormItem, Input } from 'tdesign-vue-next'
 import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
-
+import { formGroup } from '@shared/components/form'
+import { BowLottie } from '@shared/components/lottie'
 import { useTokenService } from '@/app/core/service/Token.Service'
-import { ref } from 'vue'
+
 import { useRouter } from 'vue-router'
-const INITIAL_DATA = {
-    account: '',
-    password: ''
-}
 
 const { setToken } = useTokenService()
 
-const formData = ref({ ...INITIAL_DATA })
 const { push } = useRouter()
 
-const rules = {
-    account: [{ required: true, message: '账号必填', type: 'error' }],
-    password: [{ required: true, message: '密码必填', type: 'error' }]
-}
+const { rules, data: formData } = formGroup({
+    account: ['', [{ required: true, message: '账号必填', type: 'error' }]],
+    password: ['', [{ required: true, message: '密码必填', type: 'error' }]]
+})
+
 const onReset = () => {
     MessagePlugin.success('重置成功')
 }

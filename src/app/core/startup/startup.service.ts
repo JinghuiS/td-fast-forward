@@ -4,7 +4,6 @@ import { VDI_ROUTER } from 'vdi'
 import type { APP_INITIALIZER_TYPE } from 'vdi'
 import type { Router } from 'vue-router'
 import { TokenService } from '../service/Token.Service'
-
 export class StartupService implements APP_INITIALIZER_TYPE {
     constructor(
         @Inject(LayoutService) private layoutService: LayoutService,
@@ -41,13 +40,22 @@ export class StartupService implements APP_INITIALIZER_TYPE {
                                         path: '/dialog'
                                     }
                                 ]
+                            },
+                            {
+                                name: '表单组件',
+                                path: 'form',
+                                children: [
+                                    {
+                                        name: 'formGroup',
+                                        path: '/formList/formGroup'
+                                    }
+                                ]
                             }
                         ]
                     }
                 ])
-
                 resolve(true)
-            }, 1000)
+            }, 100)
         })
     }
 }

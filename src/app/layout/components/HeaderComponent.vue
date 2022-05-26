@@ -1,32 +1,9 @@
 <template>
-    <Header class="td-starter-header-layout">
-        <HeadMenu
-            class="td-starter-header-menu td-starter-header-menu-fixed"
-            value="item1"
-        >
-            <MenuItem value="item1"> 已选内容 </MenuItem>
-            <MenuItem value="item2"> 菜单内容一 </MenuItem>
-            <MenuItem value="item3"> 菜单内容二 </MenuItem>
-            <MenuItem value="item4" :disabled="true"> 菜单内容三 </MenuItem>
-            <template #operations>
-                <a href="javascript:;"
-                    ><Icon class="t-menu__operations-icon" name="search"
-                /></a>
-                <a href="javascript:;"
-                    ><Icon
-                        class="t-menu__operations-icon"
-                        name="notification-filled"
-                /></a>
-                <a href="javascript:;"
-                    ><Icon class="t-menu__operations-icon" name="home"
-                /></a>
-            </template>
-        </HeadMenu>
-    </Header>
+    <Header class="td-starter-header-layout"> </Header>
 </template>
 
 <script setup lang="ts">
-import { Header, HeadMenu, MenuItem, Icon } from 'tdesign-vue-next'
+import { Header } from 'tdesign-vue-next'
 </script>
 
 <style lang="less" scoped>

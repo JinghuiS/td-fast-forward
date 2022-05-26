@@ -1,5 +1,3 @@
-import { ref } from 'vue'
-
 export class DialogService {
     confirm(fn: () => void) {
         this._parentEvents.confirm = fn

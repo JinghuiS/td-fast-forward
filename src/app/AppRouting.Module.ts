@@ -1,18 +1,23 @@
-import { VdiRouterModule, vueModule,  } from 'vdi'
+import { vueModule, VdiRouterModule } from 'vdi'
 
 import { createWebHashHistory } from 'vue-router'
 import { LayoutModule } from './layout/Layout.Module'
 
-
 //type
-import type {VdiRouterRaw} from 'vdi'
-
+import type { VdiRouterRaw } from 'vdi'
+import { FormListModule } from './feature/componentList/formList/FormList.Module'
+import { ResultLayoutModule } from './layout/result/ResultLayout.Module'
 
 const routes: VdiRouterRaw[] = [
     {
         path: '/',
         module: LayoutModule,
         children: [
+            {
+                path: '/formList',
+                name: 'form',
+                module: FormListModule
+            },
             {
                 path: '/STable',
                 component: () =>
@@ -26,6 +31,16 @@ const routes: VdiRouterRaw[] = [
         ]
     },
     {
+        path: '/result',
+        name: 'result',
+        module: ResultLayoutModule
+    },
+    {
+        path: '/:w+',
+        name: '404Page',
+        redirect: '/result/404'
+    },
+    {
         path: '/login',
         component: () => import('./layout/login/LoginView.vue')
     }
@@ -36,7 +51,14 @@ export const AppRoutingModule = vueModule({
     imports: [
         VdiRouterModule.forRoot({
             history: createWebHashHistory(),
-            routes: routes
+            routes: routes,
+            scrollBehavior() {
+                return {
+                    el: '#app',
+                    top: 0,
+                    behavior: 'smooth'
+                }
+            }
         })
     ]
 })

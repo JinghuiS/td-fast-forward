@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Jinghui_S",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
@@ -19,11 +19,12 @@
   "dependencies": {
     "@wendellhu/redi": "^0.5.0",
     "less": "^4.1.2",
+    "lottie-web": "^5.9.4",
     "tdesign-icons-vue-next": "^0.1.1",
     "tdesign-vue-next": "^0.14.1",
-    "vdi": "^0.4.2",
+    "vdi": "^0.4.4",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",

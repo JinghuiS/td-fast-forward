@@ -8,11 +8,20 @@
         <title>td-fast-forward</title>
         <link rel="stylesheet" type="text/css" href="/loading.css" />
     </head>
+    <style>
+        .loading-box {
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
     <body>
         <div id="app">
-            <div
-                class="flex flex-col h-screen w-full items-center justify-center"
-            >
+            <div class="loading-box">
                 <div class="plus-loader"></div>
                 <div class="font-bold text-lg mt-20px">loading....</div>
             </div>
