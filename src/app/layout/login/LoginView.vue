@@ -86,7 +86,7 @@
                 </h1>
                 <div class="flex justify-center items-center">
                     <div>
-                        <BowLottie />
+                        <BowLottie class="!w-500px" />
                         <!-- <img src="@/assets/bg.png" class="img" /> -->
                     </div>
                     <div class="form-box">
@@ -102,6 +102,7 @@
                         >
                             <FormItem name="account">
                                 <Input
+                                    class="w-200px"
                                     v-model="formData.account"
                                     clearable
                                     placeholder="请输入账户名"
@@ -113,6 +114,7 @@
                             </FormItem>
                             <FormItem name="password">
                                 <Input
+                                    class="w-200px"
                                     v-model="formData.password"
                                     type="password"
                                     clearable

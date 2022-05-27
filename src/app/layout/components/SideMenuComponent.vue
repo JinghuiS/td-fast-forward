@@ -7,12 +7,15 @@
             :value="$route.path"
         >
             <template #logo>
-                <img
-                    width="136"
-                    class="logo"
-                    src="https://www.tencent.com/img/index/menu_logo_hover.png"
-                    alt="logo"
-                />
+                <div class="font-bold text-2xl text-center w-232px">
+                    <RouterLink
+                        class="no-underline"
+                        style="color: #0052d9"
+                        to="/"
+                    >
+                        🖥td-fast-forward</RouterLink
+                    >
+                </div>
             </template>
             <MenuItemRender />
         </Menu>
@@ -22,6 +25,7 @@
 
 <script setup lang="tsx">
 import { Submenu, Menu, MenuItem, Icon } from 'tdesign-vue-next'
+import { RouterLink } from 'vue-router'
 import { useDependency } from 'vdi'
 import { useRouter } from 'vue-router'
 import { LayoutService } from '../Layout.service'
