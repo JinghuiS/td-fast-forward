@@ -3,17 +3,18 @@ import { Inject } from '@wendellhu/redi'
 import { VDI_ROUTER } from 'vdi'
 import type { APP_INITIALIZER_TYPE } from 'vdi'
 import type { Router } from 'vue-router'
-import { TokenService } from '../service/Token.Service'
+import { AuthService } from '../auth/Auth.Service'
+
 export class StartupService implements APP_INITIALIZER_TYPE {
     constructor(
         @Inject(LayoutService) private layoutService: LayoutService,
-        @Inject(TokenService) private TokenService: TokenService,
+        @Inject(AuthService) private AuthService: AuthService,
         @Inject(VDI_ROUTER) private router: Router
     ) {}
     startup() {
         return new Promise((resolve) => {
             setTimeout(() => {
-                if (!this.TokenService.token.value) {
+                if (!this.AuthService.token.value) {
                     this.router.replace('/login')
                 }
                 this.layoutService.setMenu([
@@ -38,6 +39,10 @@ export class StartupService implements APP_INITIALIZER_TYPE {
                                     {
                                         name: 'dialog',
                                         path: '/dialog'
+                                    },
+                                    {
+                                        name: 'drawer',
+                                        path: '/drawer'
                                     }
                                 ]
                             },

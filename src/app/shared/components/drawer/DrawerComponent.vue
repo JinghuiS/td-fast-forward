@@ -1,6 +1,6 @@
 <template>
     <component
-        :is="Dialog"
+        :is="Drawer"
         destroyOnClose
         v-bind="options"
         @confirm="confirm"
@@ -10,28 +10,28 @@
     </component>
 </template>
 <script lang="ts">
-import type { TdDialogProps } from 'tdesign-vue-next'
-export interface DialogProps extends TdDialogProps {
+import type { TdDrawerProps } from 'tdesign-vue-next'
+export interface DrawerProps extends TdDrawerProps {
     onClose: (msg?: unknown) => void
 }
 </script>
 <script setup lang="ts">
-import { Dialog } from 'tdesign-vue-next'
+import { Drawer } from 'tdesign-vue-next'
 import { onProvider, useDependency } from 'vdi'
 
-import { DialogService } from './Dialog.Service'
-onProvider([[DialogService]])
+import { DrawerService } from './Drawer.Service'
+onProvider([[DrawerService]])
 
-const dialogService = useDependency(DialogService, { self: true })
+const drawerService = useDependency(DrawerService, { self: true })
 
 const confirm = () => {
-    dialogService._parentEvents.confirm()
+    drawerService._parentEvents.confirm()
 }
 
 const props = withDefaults(
     defineProps<{
         visible: boolean
-        options?: TdDialogProps
+        options?: TdDrawerProps
     }>(),
     {
         visible: false,

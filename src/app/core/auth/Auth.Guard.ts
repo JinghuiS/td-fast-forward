@@ -1,10 +1,10 @@
 import { Inject } from '@wendellhu/redi'
 import type { RouterGuardImplements } from 'vdi'
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router'
-import { TokenService } from '../service/Token.Service'
+import { AuthService } from './Auth.Service'
 
 export class AuthGuard implements RouterGuardImplements {
-    constructor(@Inject(TokenService) private TokenService: TokenService) {}
+    constructor(@Inject(AuthService) private AuthService: AuthService) {}
     beforeEach(
         to: RouteLocationNormalized,
         from: RouteLocationNormalized,
@@ -16,7 +16,7 @@ export class AuthGuard implements RouterGuardImplements {
         }
 
         //判断token是否存在，没有跳转到login
-        if (!this.TokenService.token.value) {
+        if (!this.AuthService.token.value) {
             return next('/login')
         }
 

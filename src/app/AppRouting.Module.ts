@@ -24,9 +24,18 @@ const routes: VdiRouterRaw[] = [
                     import('./feature/componentList/tableList/STableView.vue')
             },
             {
+                path: '/drawer',
+                component: () =>
+                    import(
+                        './feature/componentList/overlayList/drawer/DrawerView.vue'
+                    )
+            },
+            {
                 path: '/dialog',
                 component: () =>
-                    import('./feature/componentList/overlayList/DialogView.vue')
+                    import(
+                        './feature/componentList/overlayList/dialog/DialogView.vue'
+                    )
             }
         ]
     },

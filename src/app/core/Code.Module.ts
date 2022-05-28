@@ -1,11 +1,11 @@
 import { APP_INITIALIZER, vueModule } from 'vdi'
 import { AuthModule } from './auth/Auth.Module'
-import { TokenService } from './service/Token.Service'
+import { HttpClientModule } from './http'
+
 import { StartupService } from './startup/startup.service'
 
 export const CodeModule = vueModule({
     providers: [
-        [TokenService],
         [
             /**
              * @APP_INITIALIZER 注册一个启动服务
@@ -14,5 +14,12 @@ export const CodeModule = vueModule({
             { useClass: StartupService }
         ]
     ],
-    imports: [AuthModule]
+    imports: [
+        AuthModule,
+        /**
+         * @HttpClientModule 注册一个http模块
+         * @config 参数跟axios.create一致
+         */
+        HttpClientModule.forRoot({})
+    ]
 })

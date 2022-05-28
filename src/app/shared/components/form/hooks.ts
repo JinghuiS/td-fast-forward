@@ -20,6 +20,10 @@ export const formGroup = <O extends Record<any, any>, P extends keyof O>(
 
     const form = ref<FormInstanceFunctions>()
 
+    const patchValue = (values: Partial<FormDataType<P>>) => {
+        data.value = { ...data.value, ...values }
+    }
+
     Object.keys(formItems).forEach((key) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
@@ -28,5 +32,5 @@ export const formGroup = <O extends Record<any, any>, P extends keyof O>(
         //@ts-ignore
         rules.value[key] = formItems[key][1]
     })
-    return { data, rules, form }
+    return { data, rules, form, patchValue }
 }

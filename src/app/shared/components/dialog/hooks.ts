@@ -11,18 +11,11 @@ export type useDialogProps = OverlayType<TdDialogProps>
 /** dialog的服务hook
  *  @open  调用打开弹窗
  */
-export const useDialog = (_dialogType: useDialogProps) => {
+export const useDialog = () => {
     const { open: _open, ...dialog } = useOverlay(Dialog)
 
-    const open = (dialogType?: Partial<useDialogProps>) => {
-        return _open(
-            dialogType
-                ? {
-                      ..._dialogType,
-                      ...dialogType
-                  }
-                : _dialogType
-        )
+    const open = (dialogType: useDialogProps) => {
+        return _open(dialogType)
     }
 
     return { open, ...dialog }

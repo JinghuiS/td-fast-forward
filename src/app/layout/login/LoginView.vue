@@ -143,11 +143,11 @@ import { Button, MessagePlugin, Form, FormItem, Input } from 'tdesign-vue-next'
 import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
 import { formGroup } from '@shared/components/form'
 import { BowLottie } from '@shared/components/lottie'
-import { useTokenService } from '@/app/core/service/Token.Service'
 
 import { useRouter } from 'vue-router'
+import { useAuthService } from '@/app/core/auth/Auth.Service'
 
-const { setToken } = useTokenService()
+const { setToken } = useAuthService()
 
 const { push } = useRouter()
 
