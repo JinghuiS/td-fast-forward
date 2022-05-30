@@ -1,12 +1,14 @@
+import { useLocalStorage } from '@vueuse/core'
 import { useDependency } from 'vdi'
 import { ref } from 'vue'
 
 export class AuthService {
-    token = ref(localStorage.getItem('td-fast-token') || '')
+    private tokenLocal = useLocalStorage('td-fast-token', '')
+    token = ref(this.tokenLocal.value)
 
     setToken(token: string) {
         this.token.value = token
-        localStorage.setItem('td-fast-token', token)
+        this.tokenLocal.value = token
     }
 }
 

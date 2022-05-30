@@ -17,6 +17,7 @@
     "tdesign-vue-next"
   ],
   "dependencies": {
+    "@vueuse/core": "^8.5.0",
     "@wendellhu/redi": "^0.5.0",
     "axios": "^0.27.2",
     "less": "^4.1.2",
