@@ -1,5 +1,6 @@
 <template>
     <div class="p-20px bg-white">
+        <OverlayAboutVue name="Dialog" />
         <TButton @click="openDialog">打开弹窗</TButton>
         <TButton @click="openDialogForm">打开表单弹窗</TButton>
         <TButton @click="openDialogFormParams">打开表单传参弹窗</TButton>
@@ -8,6 +9,7 @@
 
 <script setup lang="ts">
 import { Button as TButton } from 'tdesign-vue-next'
+import OverlayAboutVue from '../OverlayAbout.vue'
 import { useDialog } from '@shared/components/dialog'
 import ChildrenDemo from './DialogChildDemo.vue'
 import ChildrenFormDemo from './DialogForm.vue'

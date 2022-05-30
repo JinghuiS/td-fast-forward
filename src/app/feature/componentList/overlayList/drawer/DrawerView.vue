@@ -1,5 +1,6 @@
 <template>
     <div class="p-20px bg-white">
+        <OverlayAboutVue name="Drawer" />
         <TButton @click="openDrawer">打开抽屉</TButton>
         <TButton @click="openDrawerForm">打开表单抽屉</TButton>
         <TButton @click="openDrawerFormParams">打开表单传参抽屉</TButton>
@@ -8,6 +9,7 @@
 
 <script setup lang="ts">
 import { Button as TButton } from 'tdesign-vue-next'
+import OverlayAboutVue from '../OverlayAbout.vue'
 import { useDrawer } from '@shared/components'
 import ChildrenDemo from './DrawerChildDemo.vue'
 import ChildrenFormDemo from './DrawerForm.vue'
@@ -33,9 +35,6 @@ const openDrawerForm = () => {
             size: '800px',
             closeOnOverlayClick: false,
             header: '测试表单弹窗'
-        },
-        params: {
-            abc: 1
         }
     }).then((msg) => {
         console.log(msg)
