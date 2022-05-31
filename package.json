@@ -25,6 +25,7 @@
     "tdesign-icons-vue-next": "^0.1.1",
     "tdesign-vue-next": "^0.15.2",
     "vdi": "^0.4.6",
+    "vdi-axios": "^0.1.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.15"
   },

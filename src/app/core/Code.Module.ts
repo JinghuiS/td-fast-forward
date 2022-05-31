@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, vueModule } from 'vdi'
 import { AuthModule } from './auth/Auth.Module'
-import { HttpClientModule } from './http'
+import { HttpClientModule } from 'vdi-axios'
 
 import { StartupService } from './startup/startup.service'
 
