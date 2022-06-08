@@ -100,10 +100,10 @@
                             @reset="onReset"
                             @submit="onSubmit"
                         >
-                            <FormItem name="account">
+                            <FormItem name="username">
                                 <Input
                                     class="w-200px"
-                                    v-model="formData.account"
+                                    v-model="formData.username"
                                     clearable
                                     placeholder="请输入账户名"
                                 >
@@ -146,13 +146,15 @@ import { BowLottie } from '@shared/components/lottie'
 
 import { useRouter } from 'vue-router'
 import { useAuthService } from '@/app/core/auth/Auth.Service'
+import { useLoginService } from '@/app/core/service/login/Login.Service'
 
 const { setToken } = useAuthService()
 
+const { login: loginPost } = useLoginService()
 const { push } = useRouter()
 
 const { rules, data: formData } = formGroup({
-    account: ['', [{ required: true, message: '账号必填', type: 'error' }]],
+    username: ['', [{ required: true, message: '账号必填', type: 'error' }]],
     password: ['', [{ required: true, message: '密码必填', type: 'error' }]]
 })
 
@@ -163,10 +165,12 @@ const onReset = () => {
 const onSubmit = ({ validateResult, firstError }: any) => {
     if (validateResult === true) {
         if (
-            formData.value.account === 'admin' &&
+            formData.value.username === 'admin' &&
             formData.value.password === 'admin'
         ) {
-            login()
+            loginPost(formData.value).then(() => {
+                login()
+            })
             MessagePlugin.success('登录成功')
             return
         } else {

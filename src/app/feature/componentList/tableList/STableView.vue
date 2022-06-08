@@ -5,7 +5,7 @@
                 rowKey: 'id'
             }"
             :columns="columns"
-            :data="[]"
+            :data="data"
         ></STable>
     </div>
 </template>
@@ -13,14 +13,21 @@
 import { STable } from '@shared/components/s-table'
 import type { STableColumns } from '@shared/components/s-table'
 import { onProvider, useDependency } from 'vdi'
-import { TableService } from './Table.Service'
-import { onMounted } from 'vue'
+import { TableService, type githubTypes } from './Table.Service'
+import { onMounted, ref } from 'vue'
 const columns: STableColumns[] = [
     {
-        title: '测试'
+        title: 'login',
+        colKey: 'login'
     },
     {
-        title: '测试'
+        title: '头像',
+        colKey: 'avatar_url',
+        cell: (cell, { col, row }) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
+            return <img class="w-50px h-50px" src={row[col.colKey]} alt="" />
+        }
     },
     {
         title: '测试'
@@ -29,9 +36,12 @@ const columns: STableColumns[] = [
         title: '测试'
     }
 ]
+const data = ref<githubTypes[]>([])
 onProvider([[TableService]])
 const tableService = useDependency(TableService, { self: true })
 onMounted(() => {
-    tableService.getGithub()
+    tableService.getGithub().then((res) => {
+        data.value = res.data
+    })
 })
 </script>
