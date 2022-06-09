@@ -146,7 +146,13 @@ import { BowLottie } from '@shared/components/lottie'
 
 import { useRouter } from 'vue-router'
 import { useAuthService } from '@/app/core/auth/Auth.Service'
-import { useLoginService } from '@/app/core/service/login/Login.Service'
+import {
+    LoginService,
+    useLoginService
+} from '@/app/core/service/login/Login.Service'
+import { onProvider } from 'vdi'
+
+onProvider([[LoginService]])
 
 const { setToken } = useAuthService()
 

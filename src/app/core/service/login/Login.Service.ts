@@ -19,6 +19,6 @@ export class LoginService {
 }
 
 export const useLoginService = () => {
-    const loginService = useDependency(LoginService)
+    const loginService = useDependency(LoginService, { self: true })
     return { login: loginService.login.bind(loginService) }
 }
